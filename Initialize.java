@@ -7,7 +7,7 @@ public class Initialize {
         
         var snakes = Map.of(11, 2);
         var ladders = Map.of(7, 23);
-        int width = 10;
+        var width = 10;
         var board = new Board(width, snakes, ladders);
 
         var players = List.of(
@@ -20,7 +20,7 @@ public class Initialize {
         var numDices = 2;
 
         var game = new Game(board, players, numDices);
-        game.play();
+        game.start();
 
     }
  

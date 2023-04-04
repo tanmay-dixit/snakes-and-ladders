@@ -19,30 +19,29 @@ public class Game {
         this.winner = null;            
     }
 
-    public void play() {
+    public void start() {
         
         System.out.println("STARTING GAME\n");
 
+        System.out.println("\nNew round \n");
         while (this.isInProgress()) {
             
-            for (Player player : players) {
+            for (var player : players) {
                 
                 System.out.println("Current Player: " + player.getName());
                 
-                int newPosition = board.getNewPosition(player.getCurrentPosition(), player.throwDice(numDices));
+                var newPosition = board.getNewPosition(player.getCurrentPosition(), player.throwDice(numDices));
                 player.moveTo(newPosition);
 
                 if (player.hasWon(board.size())) {
                     winner = player;
-                    System.out.println("PLAYER " + player.getName() + " WON!");
+                    System.out.println("\nPLAYER " + player.getName() + " WON!\n");
                     break;
                 }
                 
                 System.out.println("");
             }
             
-            System.out.println("\nNext round \n");
-
         }
     }
 

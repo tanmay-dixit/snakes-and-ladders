@@ -31,7 +31,9 @@ public class Board {
         if (snakes.containsKey(newPosition)) {
             System.out.println("Moving down the snake from " + newPosition + " to " + snakes.get(newPosition));
             newPosition = snakes.get(newPosition);
-        } else if (ladders.containsKey(newPosition)) {
+        } 
+        
+        if (ladders.containsKey(newPosition)) {
             System.out.println("Moving up the ladder from " + newPosition + " to " + ladders.get(newPosition));
             newPosition = ladders.get(newPosition);
         }
